@@ -1,0 +1,383 @@
+
+body{
+    background-color: black;
+    color: #fff;
+    margin: 0 ;
+    padding: 0;
+    font-family: 'Anta';
+  }
+  h1{
+    font-size: 72px;
+  }
+  
+  h2{
+    font-size: 45px;
+  }
+  
+  /* Navbar styling */
+  
+  .custom{
+    background-color: rgba(17, 17, 17, 0.4);
+    backdrop-filter: blur(10px);
+    color: #fff;
+  }
+  
+  .offcanvas{
+  
+    height: fit-content;
+    background-color: rgba(17, 17, 17, 0.4);
+    backdrop-filter: blur(10px);
+   
+  }
+  
+  .logo-nav{
+    width: 100%;
+   
+  }
+  
+  .logo-img{
+    width: 55px;
+    padding: 5px;
+    margin-left: 20px;
+  }
+  
+  
+  
+  
+  
+  /* Hero section styling */
+  
+  .hero-section{
+    margin-top: 20px;
+    padding-top: 100px;
+  }
+  
+  .hero-text-div h1{
+    margin-bottom:40px;
+  }
+  
+  h1 span{
+    color: blueviolet;
+  }
+  
+  .hero-text-div p{
+    font-size: 1.7rem;
+    line-height: 2;
+  }
+  
+  .hero-image-div{
+    max-width: 400px;
+  }
+  
+  .hero-image-div img{
+    width: 100%;
+  }
+  
+  /* About us section styling */
+  
+  .about-us-section{
+    margin-top: 50px;
+  }
+  
+  .about-us-image-div{
+    width:550px;
+  }
+  
+  .about-us-image-div img{
+    /* object-fit: cover; */
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  
+  
+  .about-us-text-div p{
+    font-size: 1.2rem;
+    
+  }
+  
+  /* Event styling */
+  
+  .event-card {
+    width: 20rem;
+    height: 30rem;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    margin-top: 35px;
+   
+    img {
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.6;
+      transition: opacity .2s ease-out;
+    }
+  
+    h3 {
+      position: absolute;
+      inset: auto auto 30px 30px;
+      margin: 0;
+      transition: inset .3s .3s ease-out;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+    
+    p, .participate {
+      position: absolute;
+      opacity: 0;
+      max-width: 80%;
+      transition: opacity .3s ease-out;
+    }
+    
+    p {
+      inset: auto auto 80px 30px;
+    }
+    
+    .participate {
+      inset: auto auto 40px 30px;
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    &:hover h3 {
+      inset: auto auto 220px 30px;
+      transition: inset .3s ease-out;
+    }
+    
+    &:hover p, &:hover .participate {
+      opacity: 1;
+      transition: opacity .5s .1s ease-in;
+    }
+    
+    &:hover img {
+      transition: opacity .3s ease-in;
+      opacity: 1;
+    }
+  
+  }
+  
+  .material-symbols-outlined {
+    vertical-align: middle;
+  }
+  
+  .participate{
+    background-color: blueviolet;
+    border-radius: 25px;
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+  
+  }
+  
+  .participate:hover{
+    box-shadow:0 10px 30px 5px blueviolet;
+    background-color: rgb(101, 8, 187);
+    color: white;
+    cursor: pointer;
+  }
+  
+  a{
+    color: white;
+  }
+  
+  .date{
+    color:white;
+    padding-top: 5px;
+    font-size: 15px;
+    margin-bottom: 25px;
+  
+  }
+  
+  
+  
+  /* Pricing styling */
+  
+  .pricing-section p{
+    margin: 0;
+  }
+  
+  .pricing-section h4{
+    font-size: 25px;
+  }
+  
+  
+  .price-card{
+    border-radius: 20px;
+    margin-top:25px;
+    width: 300px;
+    padding: 10px;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 2px 5px 15px rgb(209, 175, 240);
+      transition: transform 0.3s;
+  }
+  
+  
+  .price-card:hover{
+    transform: scale(1.050);
+  }
+  
+  .carousel-inner{
+    border-radius: 15px;
+    box-shadow: 2px 5px 15px rgb(209, 175, 240);
+  }
+  
+  
+  /* Schedule styling */
+  
+  .schedule-section{
+    margin-top: 50px;
+  }
+  
+  .schedule-table{
+    box-shadow: 2px 5px 15px rgb(209, 175, 240);
+  }
+  
+  .schedule-table th,
+  .schedule-table td{
+    background-color: black;
+    color: white;
+  }
+  
+  /* .custom-modal-style{
+    border: 1px solid white;
+  } */
+  
+  .custom-modal-style,
+  .custom-modal-style th,
+  .custom-modal-style td{
+    background-color: black;
+    color: #fff;
+  }
+  
+  
+  
+  .schedule-small{
+    display: none;
+  }
+  
+  @media(max-width:992px){
+    .schedule-table{
+      font-size: 14px;
+    }
+  }
+  
+  
+  @media(max-width:768px) {
+    
+  
+    .schedule-table{
+      display: none;
+    }
+  
+    .schedule-small{
+      display: block;
+    }
+  
+    .mobile-schedule{
+      margin-bottom: 10px;
+    }
+  
+    .mobile-schedule td,
+    .mobile-schedule th{
+      background-color: black;
+      color: white;
+    }
+  
+    .schedule-small .row{
+      margin-bottom: 20px;
+    }
+  
+    .day-div{
+      /* border: 1px solid white; */
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 20px;
+      box-shadow: 2px 5px 15px rgb(209, 175, 240);
+      transition: transform 0.3s;
+    }
+  
+    .day-div:hover{
+      transform: scale(1.050);
+    }
+  
+    .mobile-schedule{
+      display:none;
+    }
+  
+    .mobile-schedule .table{
+      margin-top: 20px;
+    }
+  
+    
+  
+    .active{
+      display: flex;
+      justify-content: center;
+    }
+  
+    .schedule-daily{
+      position: relative;
+    }
+  
+    .mb-close-btn{
+      position: absolute;
+      right: 0;
+      top: 0;
+      
+      font-size: 30px;
+      background-color:none;
+      color: white;
+      font-weight: 600;
+      line-height: 19px;
+      border-radius: 50%;
+      text-align: center;
+      cursor: pointer;
+      margin-right: 85px;
+      margin-top: 30px;
+    }
+    
+  
+  
+  }
+  
+  /* Footer styling */
+  .footer{
+    padding: 25px;
+  }
+  
+  
+  .maps{
+   width: 100%;
+   height: 400px;
+  
+  }
+  
+  .bi {
+    font-size: 2rem;
+    color: aliceblue;
+  
+  }
+   .icons{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+   }
+  
+   .phone-number{
+    margin: 0;
+   }
+  
+  
+  
+  
+  /* --------------- */
+  

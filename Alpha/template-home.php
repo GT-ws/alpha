@@ -52,97 +52,56 @@ $aboutusimg=get_field('about_us_image');
     </div>
   </section>
 
-  <?php
-    $eventTitle = get_field('events_title');
 
-    if( have_rows('event_box') ):
+<?php
+  $eventsTitle = get_field('events_title');
+?>
 
-      // Loop through rows.
-      while( have_rows('event_box') ) : the_row();
-
-        
-  
-          // Load sub field value.
-         $event_title = get_sub_field('event_title');
-         
-         $event_date = get_sub_field('event_date');
-  
-         $event_subtitle = get_sub_field('event_subtitle');
-  
-         $event_image = get_sub_field('event_image');
-  
-         ?>
-                 
-         
-          <?php
-      endwhile;
-  
-  // No value.
-  else :
-      // Do something...
-  endif;
-  
-  ?>
-
-
-  <section class="event-section" id="events">
+<section class="event-section" id="events">
     <div class="container">
-      <div class="row justify-content-lg-between justify-content-md-evenly justify-content-sm-evenly justify-content-evenly">
-        <div class="col-log-12">
-          <h2 style="text-align: center; margin-top: 75px;"><?php echo $eventTitle;?></h2>
-        </div>
-        <div class="col-lg-4 col-md-6 event-card">
-          <div class="event-image-div">
-            <img src="../images/training-event.jpg" alt="">
-            <div class="card-content">
-              <h3>
-                <?php echo $event_title; ?>
-                <div class="date"><i class="fa-regular fa-calendar-days"></i> 2024.05.19</div>
-              </h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt exercitationem iste, voluptatum, quia explicabo laboriosam rem adipisci voluptates.
-              </p>
-              <a href="" target="_blank">
-              <button class="participate" type="button">Participate</button></a>
+        <div class="row justify-content-lg-between justify-content-md-evenly justify-content-sm-evenly justify-content-evenly">
+            <div class="col-log-12">
+                <h2 style="text-align: center; margin-top: 75px;"><?php echo $eventsTitle; ?></h2>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 event-card">
-          <div class="event-image-div">
-            <img src="../images/training-event.jpg" alt="">
-            <div class="card-content">
-              <h3>
-                <?php echo $event_title; ?>
-                <div class="date"><i class="fa-regular fa-calendar-days"></i> 2024.05.19</div>
-              </h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt exercitationem iste, voluptatum, quia explicabo laboriosam rem adipisci voluptates.
-              </p>
-              <a href="" target="_blank">
-              <button class="participate" type="button">Participate</button></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-12 event-card">
-          <div class="event-image-div">
-            <img src="../images/training-event.jpg" alt="">
-            <div class="card-content">
-              <h3>
-                Event
-                <div class="date"><i class="fa-regular fa-calendar-days"></i> 2024.05.19</div>
-              </h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt exercitationem iste, voluptatum, quia explicabo laboriosam rem adipisci voluptates.
-              </p>
-              <a href="" target="_blank">
-              <button class="participate" type="button">Participate</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            <?php
+            if (have_rows('event_box')):
+                // Loop through rows.
+                while (have_rows('event_box')) : the_row();
 
-  </section>
+                    // Load sub field values.
+                    $event_title = get_sub_field('event_title');
+                    $event_date = get_sub_field('event_date');
+                    $event_subtitle = get_sub_field('event_subtitle');
+                    $event_image = get_sub_field('event_image');
+            ?>
+                    <div class="col-lg-4 col-md-6 event-card">
+                        <div class="event-image-div">
+                            <img src="<?php echo $event_image['url']; ?>" alt="<?php echo $event_image['alt']; ?>">
+                            <div class="card-content">
+                                <h3>
+                                    <?php echo $event_title; ?>
+                                    <div class="date"><i class="fa-regular fa-calendar-days"></i> <?php echo $event_date; ?></div>
+                                </h3>
+                                <p>
+                                    <?php echo $event_subtitle; ?>
+                                </p>
+                                <a href="" target="_blank">
+                                    <button class="participate" type="button">Participate</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            <?php
+                endwhile;
+            else :
+                // No value.
+                // Do something...
+            endif;
+            ?>
+        </div>
+    </div>
+</section>
+
 
   <?php
     get_template_part('templates/footer');
